@@ -1,0 +1,5 @@
+automation/target/
+*.class
+.vscode/
+.DS_Store
+Thumbs.db

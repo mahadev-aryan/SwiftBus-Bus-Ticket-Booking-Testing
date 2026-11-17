@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SwiftBus | Book your journey</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><div class="brand">Swift<span>Bus</span></div><nav><a href="#search">Search buses</a><a href="#bookings">My bookings</a><button id="logoutBtn" hidden>Logout</button></nav></header>
+<main>
+<section class="hero"><p class="eyebrow">TRAVEL MADE SIMPLE</p><h1>Your journey starts here.</h1><p>Find a bus, choose your seat and confirm your trip.</p></section>
+<section class="card" id="search"><h2>Search buses</h2>
+<div class="grid">
+<label>From<input id="source" placeholder="e.g. Mysuru" value="Mysuru"></label>
+<label>To<input id="destination" placeholder="e.g. Bengaluru" value="Bengaluru"></label>
+<label>Journey date<input id="journeyDate" type="date"></label>
+</div><button id="searchBtn">Search buses</button><p id="searchError" class="error" role="alert"></p>
+</section>
+<section id="results" class="card" hidden><h2>Available buses</h2><div id="busList"></div></section>
+<section id="seats" class="card" hidden><h2>Select your seat</h2><p>Green = available · Grey = booked · Blue = selected</p><div id="seatMap" class="seatmap"></div><p id="seatError" class="error" role="alert"></p><button id="continueBtn">Continue</button></section>
+<section id="passenger" class="card" hidden><h2>Passenger details</h2><div class="grid">
+<label>Full name<input id="passengerName" placeholder="Passenger name"></label>
+<label>Age<input id="age" type="number" min="5" max="100" placeholder="5–100"></label>
+<label>Mobile number<input id="mobile" maxlength="10" placeholder="10 digit number"></label>
+</div><p id="passengerError" class="error" role="alert"></p><button id="payBtn">Proceed to mock payment</button></section>
+<section id="payment" class="card" hidden><h2>Mock payment</h2><p>No real payment is collected.</p><label>Payment outcome<select id="paymentOutcome"><option value="success">Simulate success</option><option value="fail">Simulate failure</option></select></label><button id="confirmBtn">Confirm booking</button><p id="paymentError" class="error" role="alert"></p></section>
+<section id="confirmation" class="card" hidden><h2>Booking confirmation</h2><p id="ticketText"></p><button id="newSearchBtn">Book another trip</button></section>
+<section id="bookings" class="card"><h2>My bookings</h2><div id="bookingList">No bookings yet.</div></section>
+</main><footer>SwiftBus demo application · Test environment only</footer>
+<script src="app.js"></script></body></html>

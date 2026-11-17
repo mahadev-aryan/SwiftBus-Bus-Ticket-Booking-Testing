@@ -1,0 +1,12 @@
+Test ID,Module,Scenario,Input,Expected Result,Technique
+TC01,Search,Valid route,Mysuru to Bengaluru,Bus results displayed,Positive
+TC02,Search,Same source and destination,Mysuru to Mysuru,Validation shown,Negative
+TC03,Search,Missing source,Blank source,Validation shown,Negative
+TC04,Seat,Select available seat,A1,Seat selected,State transition
+TC05,Seat,Booked seat,A2,Seat disabled,Negative
+TC06,Passenger,Age below minimum,4,Rejected,BVA
+TC07,Passenger,Minimum age,5,Accepted,BVA
+TC08,Passenger,Age above maximum,101,Rejected,BVA
+TC09,Payment,Payment success,Success,Booking confirmed,Positive
+TC10,Payment,Payment failure,Fail,Booking not confirmed,Negative
+TC11,Booking,Cancel confirmed booking,Booking ID,Status becomes cancelled,State transition
