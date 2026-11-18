@@ -18,7 +18,7 @@
 <section id="passenger" class="card" hidden><h2>Passenger details</h2><div class="grid">
 <label>Full name<input id="passengerName" placeholder="Passenger name"></label>
 <label>Age<input id="age" type="number" min="5" max="100" placeholder="5–100"></label>
-<label>Mobile number<input id="mobile" maxlength="10" placeholder="10 digit number"></label>
+<label>Mobile number<input id="mobile" placeholder="10 digit number"></label>
 </div><p id="passengerError" class="error" role="alert"></p><button id="payBtn">Proceed to mock payment</button></section>
 <section id="payment" class="card" hidden><h2>Mock payment</h2><p>No real payment is collected.</p><label>Payment outcome<select id="paymentOutcome"><option value="success">Simulate success</option><option value="fail">Simulate failure</option></select></label><button id="confirmBtn">Confirm booking</button><p id="paymentError" class="error" role="alert"></p></section>
 <section id="confirmation" class="card" hidden><h2>Booking confirmation</h2><p id="ticketText"></p><button id="newSearchBtn">Book another trip</button></section>
