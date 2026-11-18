@@ -1,53 +1,158 @@
-# SwiftBus — Bus Ticket Booking System Testing
+# SwiftBus – Bus Ticket Booking System Testing
 
-A small custom bus-booking demo application plus a Selenium WebDriver + Java + JUnit 5 UI automation starter project. It is intended for academic testing only. Payment is simulated; no real payment is processed.
+An end-to-end software testing project that automates and evaluates a bus ticket booking web application using Selenium WebDriver, Java, and JUnit 5.
 
-## Repository structure
-- `application/` — HTML, CSS and JavaScript demo application.
-- `automation/` — Maven project containing Selenium/JUnit 5 tests.
-- `documentation/` — test design notes and formal QA templates.
-- `presentation/` — add the final CA3 PPT here.
-- `screenshots/` — add genuine execution screenshots here.
+## Project Overview
 
-## Prerequisites
-- Java JDK 17+
-- Apache Maven 3.9+
+SwiftBus is a demo bus ticket booking application developed to demonstrate software testing concepts and automation techniques.
+
+The project focuses on validating the application's functionality, identifying input-related errors, and verifying user workflows through automated testing.
+
+## Objectives
+
+- Apply Black-Box Testing techniques.
+- Apply White-Box Testing techniques.
+- Automate application workflows using Selenium WebDriver.
+- Implement automated test cases using JUnit 5.
+- Apply Page Object Model (POM) architecture.
+- Evaluate test coverage using Control Flow Graphs and Cyclomatic Complexity.
+
+## Technologies Used
+
+- Java
+- Selenium WebDriver
+- JUnit 5
+- Maven
+- HTML
+- CSS
+- JavaScript
+- Visual Studio Code
+- Git and GitHub
+
+## Application Features
+
+- Journey source and destination selection.
+- Journey date validation.
+- Bus search functionality.
+- Seat selection.
+- Passenger information validation.
+- Mock payment and booking confirmation.
+
+**Note:** This is a demonstration application. It does not process real payments or make actual bus reservations.
+
+## Testing Techniques
+
+### 1. Black-Box Testing
+
+**Equivalence Class Partitioning (ECP)**
+- Valid and invalid routes.
+- Empty and valid passenger details.
+- Valid and invalid age groups.
+- Valid and invalid mobile numbers.
+- Available and booked seats.
+
+**Boundary Value Analysis (BVA)**
+- Age boundaries: 4, 5, 6, 52, 99, 100, 101.
+- Mobile number boundaries: 9, 10, and 11 digits.
+- Journey date boundaries: yesterday, today, and tomorrow.
+
+### 2. White-Box Testing
+
+- Control Flow Graph (CFG).
+- Cyclomatic Complexity.
+- Basis Path Testing.
+
+The passenger validation logic has a Cyclomatic Complexity of **4**, resulting in four independent basis paths.
+
+### 3. Automation Testing
+
+- Selenium WebDriver for browser automation.
+- JUnit 5 for test execution.
+- Parameterized tests using `@ParameterizedTest` and `@CsvSource`.
+- Page Object Model for maintainable test architecture.
+
+## Project Structure
+
+```text
+SwiftBus-Bus-Ticket-Booking-Testing/
+│
+├── application/
+│   ├── index.html
+│   ├── style.css
+│   └── app.js
+│
+├── automation/
+│   ├── pom.xml
+│   └── src/test/java/swiftbus/
+│       ├── SwiftBusTests.java
+│       └── pages/
+│           ├── SearchPage.java
+│           ├── BusPage.java
+│           └── PassengerPage.java
+│
+├── documentation/
+│   ├── README.md
+│   ├── formal-qa-notes.md
+│   ├── test-cases.csv
+│   └── evidence/
+│
+└── README.md
+```
+
+## Test Execution Results
+
+| Metric | Result |
+|---|---:|
+| Total Tests | 13 |
+| Passed | 13 |
+| Failed | 0 |
+| Errors | 0 |
+| Skipped | 0 |
+| Build Status | SUCCESS |
+
+All 13 automated test cases passed successfully in the latest confirmed execution.
+
+## Running the Tests
+
+### Prerequisites
+
+- Java JDK
+- Apache Maven
 - Google Chrome
-- VS Code with Extension Pack for Java (recommended)
+- Visual Studio Code
 
-Check installations in a terminal:
-```bash
-java -version
-mvn -version
-```
+### Execution
 
-## Run the application
-Open `application/index.html` directly in Chrome, or serve the folder:
-```bash
-cd application
-python -m http.server 8000
-```
-Then open `http://localhost:8000`.
+1. Clone or download this repository.
+2. Open the project in Visual Studio Code.
+3. Open the `automation` folder as the working directory.
+4. Run the Maven test lifecycle:
 
-## Run Selenium tests
-Open a second terminal:
 ```bash
-cd automation
 mvn clean test
 ```
-Selenium Manager attempts to obtain a compatible ChromeDriver automatically. Ensure Chrome and internet access are available on the first run.
 
-## Test report
-After Maven execution, inspect:
-`automation/target/surefire-reports/`
+## Documentation and Evidence
 
-## Test scope
-Login is not implemented in this starter version. Current implemented flows cover route search, bus results, seat availability, passenger age validation, mock payment, confirmation and cancellation. Extend the app and tests as time permits.
+Detailed project documentation, formal QA analysis, test cases, and execution evidence are available in the `documentation` folder.
 
-## Formal QA documentation
-See `documentation/` for ECP, BVA, CFG, cyclomatic complexity and basis path templates. Use the actual implemented logic and measured execution results in your final submission.
+- [Formal QA Notes](documentation/formal-qa-notes.md)
+- [Detailed Project Documentation](documentation/README.md)
+- [Test Cases](documentation/test-cases.csv)
 
-## Important
-- Do not enter real payment or personal information.
-- Do not claim tests passed until you have run them.
-- Replace assumptions in test design with the application's actual validation rules.
+## Limitations
+
+- The application uses simulated booking and payment functionality.
+- No real payment gateway is integrated.
+- No production backend or database is connected.
+- Testing focuses on the implemented demonstration application's functionality.
+
+## Conclusion
+
+This project demonstrates the practical application of software testing principles through manual test design, formal QA techniques, and Selenium-based automation.
+
+It combines black-box testing, white-box testing, and automated functional testing to evaluate a multi-step bus ticket booking workflow.
+
+## Repository
+
+GitHub: https://github.com/mahadev-aryan/SwiftBus-Bus-Ticket-Booking-Testing
